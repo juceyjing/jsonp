@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		window.onload=function(){
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						alert(xhr.responseText);
+					}
+				}
+				xhr.open("get","1.txt",true);
+				xhr.send();
+
+			}
+		}
+
+	</script>
+</head>
+<body>
+<input type="button" name="submit" value="send" id="btn">
+</body>
+</html>
